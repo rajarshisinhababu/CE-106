@@ -29,7 +29,7 @@ class EmployeeUnitTest{
     emp2.setSalary(800);
     emp2.setManagerId(1);
     List<Employee> employees = List.of(emp1,emp2);
-    empHieararchy.createEmployeeHieararchy(employees);
+    empHieararchy.createEmployeeHierarchy(employees);
   }
 
   @Test
