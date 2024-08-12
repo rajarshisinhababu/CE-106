@@ -26,8 +26,43 @@ public class EmployeeService{
         System.out.println("Manager Id :"+employeeUtil.getEmpNamefromId(managerId,empHierarchy)+" is underpaid by "+ (underPaidSal - managerSal));      
       }else if(managerSalary> overPaidSal && salaryPercent > Constants.MAX_MANAGER_SALARY_PERCENTAGE){
         System.out.println("Manager Id:"+employeeUtil.getEmpnameFromId(managerId,empHierarchy)+ " is overpaid by "+ (managerSal- overPaidSal));
+      }    
+  }
+}
+  
+  public void getEmployeeWithMostHierarchy(EmpHierarchy empHierarchy){
+
+    EmployeeUtil employeeUtil = new EmployeeUtil();
+    Queue<Integer> queue = new LinkedList<>();
+    Set<Integer> visited = new HashSet<>();
+    Map<Integer,Integer> deapth = new HashMap<Integer,Integer>();
+    int ceo = empHiearchy.getCeoId();
+    queue.add(ceoId);
+    visited.add(ceoId);
+    deapth.put(ceoId,0);
+    while(!queue.isEmpty()){
+      int currentNode = queue.poll();
+      List<Integer> neighbours = empHierarchy.getEmpHierarchy().get(currentNode);
+      if(neighbours!=null){
+        for(int neighbour : neighbours){
+          if(!visited.contains(neighbour)){
+            visited.add(neighbour);
+            queue.add(neighbour);
+            deapth.put(neighbour,deapth.get(currentNode)+1);
+            if(deapth.get(neighbour) > Constants.MAX_HIERARCHY_LEVEL)
+              System.out.println("Employee : "+employeeUtil.getEmpNameFromId(neighbour,empHiearchy)+" has a reporting line longer by " + deapth.get(neighbour)+ "level");
+          }
+        }
       }
     }
-    
+  }
+
+  public List<Employee> loadEmployeeFromCSVFile(String filePath){
+    try{
+      return new CsvReader().readCsv(filePath);
+    }catch(IOException e){
+        System.out.println("CSV file path not found");
+        return ;
+    }
   }
 }
