@@ -42,11 +42,20 @@ public class EmpHierarchy{
         empHierarchy.put(employee.getManagerId(),empList);
       }else{
         empHierarchy.get(employee.getManagerid()).add(employee.getId());
-      }
-      
+      }   
     }
   }
 
-  
+  public Map<Integer,Employee> getEmployeeMap(){
+    return employeeMap;
+  }
+
+  public Map<Integer,List<Integer>> getEmpHierarchy(){
+    return empHierarchy;
+  }
+
+  public int getCeo(){
+    return ceoId;
+  }
   
 }
