@@ -46,7 +46,7 @@ class EmployeeUnitTest{
 
   @Test
   void calPercentage_shouldReturnCorrectPercentageWhenManagerSalaryLess(){
-    int result = employeeUtil.calPercent(800,1000);
+    int result = employeeUtil.calPercentage(800,1000);
     assertEquals(25,result);
   }
 
