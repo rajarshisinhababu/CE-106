@@ -32,7 +32,7 @@ public class EmployeeService{
       if(managerSalary < underPaidSal && salaryPercent < Constants.MIN_MANAGER_SALARY_PERCENTAGE){
         System.out.println("Manager Id :"+employeeUtil.getEmpNameFromId(managerId,empHierarchy)+" is underpaid by "+ (underPaidSal - managerSalary));      
       }else if(managerSalary> overPaidSal && salaryPercent > Constants.MAX_MANAGER_SALARY_PERCENTAGE){
-        System.out.println("Manager Id:"+employeeUtil.getEmpnameFromId(managerId,empHierarchy)+ " is overpaid by "+ (managerSalary- overPaidSal));
+        System.out.println("Manager Id:"+employeeUtil.getEmpNameFromId(managerId,empHierarchy)+ " is overpaid by "+ (managerSalary- overPaidSal));
       }    
   }
 }
