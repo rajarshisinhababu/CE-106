@@ -4,7 +4,7 @@ import org.example.component.EmpHierarchy;
 import org.example.component.EmployeeService;
 import org.example.entity.Employee;
 import org.example.util.Constants;
-import java.util.list;
+import java.util.List;
 
 /**
 * Main class to run the employee management application
