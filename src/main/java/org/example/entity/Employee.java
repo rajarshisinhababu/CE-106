@@ -40,11 +40,11 @@ public class Employee{
     this.salary=salary;
   }
 
-  public getManagerId(){
+  public int getManagerId(){
     return managerId;
   }
 
-  public setManagerId(int managerId){
+  public void setManagerId(int managerId){
     this.managerId=managerId;
   }
 
