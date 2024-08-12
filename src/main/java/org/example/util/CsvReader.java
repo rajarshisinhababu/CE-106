@@ -34,7 +34,12 @@ public class CsvReader{
   }
 
   private int getManagerId(CSVRecord record){
-      String managerId
+      String managerId=record.get(EmployeeHeaders.managerId.name());
+      return (managerId==null || managerId.isEmpty()) ? 0 : Integer.parseInt(managerId);
+  }
+
+  private enum EmployeeHeader {
+    id,firstName,lastName,salary,managerId
   }
 
 }
