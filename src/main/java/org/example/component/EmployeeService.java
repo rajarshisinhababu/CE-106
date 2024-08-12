@@ -64,7 +64,7 @@ public class EmployeeService{
     }
   }
 
-  public List<Employee> loadEmployeeFromCSVFile(String filePath){
+  public List<Employee> loadEmployeeDataFromCSV(String filePath){
     try{
       return new CsvReader().readCsv(filePath);
     }catch(IOException e){
