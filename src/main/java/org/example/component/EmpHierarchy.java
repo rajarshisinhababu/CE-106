@@ -31,7 +31,7 @@ public class EmpHierarchy{
 
       //check if the employee is ceo 
       if(employee.getManagerId()==0){
-        ceo=employee.getId();
+        ceoId=employee.getId();
         continue;
       }
 
