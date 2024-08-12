@@ -35,7 +35,7 @@ public class CsvReader{
 
     for(CSVRecord record : parser){
       Employee employee = new Employee();
-      employee.setId(Integer.ParseInt(record.get(EmployeeHeaders.id.name())));
+      employee.setId(Integer.parseInt(record.get(EmployeeHeaders.id.name())));
       employee.setFirstName(record.get(EmployeeHeaders.firstName.name()));
       employee.setLastName(record.get(EmployeeHeaders.lastName.name()));
       employee.setSalary(Integer.parseInt(record.get(EmployeeHeaders.salary.name())));
