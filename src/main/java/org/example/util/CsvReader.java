@@ -23,10 +23,10 @@ public class CsvReader{
   public List<Employee> readCsv(String path) throws IOException {
 
     //get the csv parser from the path
-    CSVParser parser = getCsvParser(path);
+    CSVParser parser = getCSVParser(path);
 
     //parse the csvfile and return the list of employess
-    return parseCsv(parser);
+    return parseCSV(parser);
   }
 
   private List<Employee> parseCSV(CSVParser parser){
@@ -36,10 +36,15 @@ public class CsvReader{
     for(CSVRecord record : parser){
       Employee employee = new Employee();
       employee.setId(Integer.ParseInt(record.get(EmployeeHeaders.id.name())));
-      employee.setFirstName();
-
+      employee.setFirstName(record.get(EmployeeHeaders.firstName.name()));
+      employee.setLastName(record.get(EmployeeHeaders.lastName.name()));
+      employee.setSalary(Integer.parseInt(record.get(EmployeeHeaders.salary.name())));
+      employee.setManagerId(getManagerid(record));
+      
       employees.add(employee);
     }
+
+    return employees;
   }
 
   private CSVParser getCSVParser(String path) throws IOException {
@@ -56,7 +61,7 @@ public class CsvReader{
       return (managerId==null || managerId.isEmpty()) ? 0 : Integer.parseInt(managerId);
   }
 
-  private enum EmployeeHeader {
+  private enum EmployeeHeaders {
     id,firstName,lastName,salary,managerId
   }
 
