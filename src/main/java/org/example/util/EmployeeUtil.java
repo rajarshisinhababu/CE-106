@@ -1,5 +1,7 @@
 package org.example.util;
 
+import org.example.component.EmpHierarchy;
+import org.example.entity.Employee;
 
 /**
 * Utility class for the Employee related operations
