@@ -17,6 +17,11 @@ public class EmpHierarchy{
     empHierarchy = new HashMap<Integer,List<Integer>>();
   }
 
+  /**
+  * create employee hierchy from the employee list
+  *
+  * @param employees
+  */
   public void createEmployeeHierarchy(List<Employee> employees){
 
     //put employee details in map by emp-id
@@ -31,7 +36,7 @@ public class EmpHierarchy{
       }
 
       //add the data in the hierarchy
-      if(empHierarchy.get(employee.getManagerId))==null){
+      if(empHierarchy.get(employee.getManagerId())==null){
         List<Integer> empList = new ArrayList<Integer>();
         empList.add(employee.getId);
         empHierarchy.put(employee.getManagerId(),empList);
