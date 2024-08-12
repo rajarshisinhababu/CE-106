@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class EmployeeUnitTest{
 
   private EmployeeUtil employeeUtil;
-  private EmpHiearchy empHieararchy;
+  private EmpHierarchy empHieararchy;
 
   @BeforeEach
   void setup(){
@@ -29,7 +29,7 @@ class EmployeeUnitTest{
     emp2.setSalary(800);
     emp2.setManagerId(1);
     List<Employee> employees = List.of(empp1,emp2);
-    empHiearchy.createEmployeeHieararchy(employee);
+    empHieararchy.createEmployeeHieararchy(employee);
   }
 
   @Test
@@ -58,7 +58,7 @@ class EmployeeUnitTest{
 
   @Test
   void getEmpFromId_shouldReturnNullWhenNotFound(){
-    String result = empUtil.getEmpNameFromId(19,empHiearchy);
+    String result = empUtil.getEmpNameFromId(19,empHieararchy);
     assertEquals(null,result);
   }
 
