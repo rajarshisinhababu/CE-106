@@ -9,6 +9,12 @@ import java.util.*;
 
 public class EmployeeService{
 
+  /**
+  * calculate the pay difference of each manager and print if there are overpaid or underpaid
+  * that every manager earns at least 20% more than the average salary of its direct subordinates, but no more than 50% more than that average.
+  *
+  * @param empHierarchy
+  */
   public void getPayDifference(EmpHierarchy empHierarchy){
 
     EmployeeUtil employeeUtil = new EmployeeUtil();
@@ -36,7 +42,12 @@ public class EmployeeService{
       }    
   }
 }
-  
+
+  /**
+  * identify all employees who have more than 4 manager between them and CEO
+  *
+  * @param empHierarchy
+  */
   public void getEmployeeWithMostHierarchy(EmpHierarchy empHierarchy){
 
     EmployeeUtil employeeUtil = new EmployeeUtil();
@@ -64,6 +75,12 @@ public class EmployeeService{
     }
   }
 
+  /**
+  * load employee data from CSV file
+  *
+  * @param filePath
+  * @return list of employees, or null if file not found
+  */
   public List<Employee> loadEmployeeDataFromCSV(String filePath){
     try{
       return new CsvReader().readCsv(filePath);
