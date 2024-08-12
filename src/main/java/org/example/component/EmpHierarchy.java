@@ -1,5 +1,11 @@
 package org.example.component;
 
+import org.example.entity.Employee;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class EmpHierarchy{
 
   private final Map<Integer,Employee> employeeMap;
