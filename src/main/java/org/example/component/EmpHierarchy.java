@@ -54,7 +54,7 @@ public class EmpHierarchy{
     return empHierarchy;
   }
 
-  public int getCeo(){
+  public int getCeoId(){
     return ceoId;
   }
   
