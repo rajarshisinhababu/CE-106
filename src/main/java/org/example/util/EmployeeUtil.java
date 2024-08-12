@@ -1,5 +1,9 @@
 package org.example.util;
 
+
+/**
+* Utility class for the Employee related operations
+*/
 public class EmployeeUtil{
 
   public int calPercentage(int managerSalary, int subordinateSalary){
