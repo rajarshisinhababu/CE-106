@@ -13,6 +13,13 @@ import java.util.List;
 
 public class CsvReader{
 
+  /**
+ * Reads data from the CSV file and returns a list of employees.
+ *
+ * @param path the path to the CSV file
+ * @return a list of employees
+ * @throws IOException if an I/O error occurs
+ */
   public List<Employee> readCsv(String path) throws IOException {
 
     //get the csv parser from the path
