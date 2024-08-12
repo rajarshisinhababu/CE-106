@@ -39,7 +39,7 @@ public class CsvReader{
       employee.setFirstName(record.get(EmployeeHeaders.firstName.name()));
       employee.setLastName(record.get(EmployeeHeaders.lastName.name()));
       employee.setSalary(Integer.parseInt(record.get(EmployeeHeaders.salary.name())));
-      employee.setManagerId(getManagerid(record));
+      employee.setManagerId(getManagerId(record));
       
       employees.add(employee);
     }
@@ -52,7 +52,7 @@ public class CsvReader{
 
     return new CSVParser(reader , CSVFormat.DEFAULT
                          .withFirstRecordAsHeader()
-                         .withIgnoreheaderCase()
+                         .withIgnoreHeaderCase()
                          .withTrim());
   }
 
