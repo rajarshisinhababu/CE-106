@@ -69,7 +69,7 @@ public class EmployeeService{
       return new CsvReader().readCsv(filePath);
     }catch(IOException e){
         System.out.println("CSV file path not found");
-        return ;
+        return null;
     }
   }
 }
