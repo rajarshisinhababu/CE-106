@@ -9,7 +9,9 @@ import java.util.list;
 /**
 * Main class to run the employee management application
 **/
-public class Main(String[] args){
+public class Main{
+
+  public static void main(String[] args){
 
   //load employee data from csv
   List<Employee> employees = new EmployeeService().loadEmployeeDataFromCSV(Constants.CSV_FILE_ADDRESS);
@@ -25,5 +27,5 @@ public class Main(String[] args){
   //get employees who have more than 4 managers
   System.out.println();
   employeeService.getEmployeeWithMostHierarchy(empHierarchy);
-  
+  }
 }
